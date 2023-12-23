@@ -39,13 +39,26 @@ nav ul li a{
     position: relative;
 }
 
-nav ul li a.active:before{
+/* underline only for active class */
+nav ul li a.active:before {
    position:absolute;
    content: "";
    width: 35%;
    height: 1px;
    border-bottom: 2px solid black;
    bottom: -6px;
+}
+
+/* For Hovering on the Nav bar items */
+
+nav ul li a:before {
+    position:absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid rgb(122, 122, 122);
+    bottom: -6px;
+    transition: width .3s;
 }
 
 /* Hero Section */
@@ -105,6 +118,7 @@ h1{
 
 .secondary-cta svg {
     width: 20px;
+    transition: transform .3s;
 }
 
 .content {
@@ -155,6 +169,7 @@ p.details {
     display: flex;
     align-items: end; /* to keep the text at the end */
     background-size: 200%;
+    transition: background-size 800ms;
 }
 
 .card1 {
@@ -188,6 +203,8 @@ p.details {
    display: flex;
    align-items: center;
    justify-content: space-between;
+       /* to give smooth hovering transition*/
+   transition: transform 800ms;
 }
 
 .card-details a {
@@ -195,6 +212,7 @@ p.details {
     font-size: 1.6rem;
     font-weight: bold;
     text-decoration: none;
+    
 }
 
 .card-details p {
@@ -204,4 +222,61 @@ p.details {
 
 p.product-price {
     font-size: 1.8rem;
+}
+
+/*Micro Interactions like animations */
+
+nav ul li a:hover:before {
+    width: 35%;
+}
+
+.primary-cta:hover {
+    background: #e2d1bd;
+}
+
+.secondary-cta:hover svg {
+    transform: translateX(10px);
+}
+
+.secondary-cta:hover {
+    text-decoration: underline;
+}
+
+.card:hover {
+    background-size: 160%;
+}
+
+.card:hover .card-details {
+    transform: translateY(-20px);
+}
+
+/*Intro Animation*/
+.overlay {
+    position: absolute;
+    z-index: 999;
+    background: white;
+    height: 100%;
+    width: 100%;
+    animation: butterfly 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes butterfly {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
+
+main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn {
+    to {
+      transform: scale(1);
+    }
 }

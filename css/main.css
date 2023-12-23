@@ -1,0 +1,139 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* Navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 4em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+    margin: 0;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav ul li a.active:before{
+   position:absolute;
+   content: "";
+   width: 35%;
+   height: 1px;
+   border-bottom: 2px solid black;
+   bottom: -6px;
+}
+
+/* Hero Section */
+
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
+}
+
+.left-col {
+    width: 45%;
+}
+
+.right-col{
+    flex-grow: 1;
+}
+
+h1{
+    font-size: 5.2rem;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    margin: 0;
+}
+
+.subheading {
+   font-size: 1.8rem;
+}
+
+.cta-btns {
+    margin: 5em 0;;
+}
+
+.cta-btns , .secondary-cta {
+    display: flex;
+    gap: 2em;
+}
+
+.primary-cta{
+    background-color: #f1e2d1;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 1.9em;
+    padding: 1em 2em;
+}
+
+.secondary-cta {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 1em 0; /* 1em on top bottom and 0 for right left*/
+    align-items: center;
+}
+
+.secondary-cta svg {
+    width: 20px;
+}
+
+.content {
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: 0.8em;
+    position: relative;
+}
+
+.content:before {
+    position: absolute;
+    content: "";
+    background: url('../images/confetti.svg');
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+}
+
+p.employees {
+   font-size: 3rem;
+   margin: 0;
+   font-weight: 200;
+   line-height: 100%;  /* To make it even along the line  40K and the text aligned in same line*/
+}
+
+p.details {
+    font-size: 1.4rem;
+    margin: 0;
+}

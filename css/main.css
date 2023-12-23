@@ -137,3 +137,71 @@ p.details {
     font-size: 1.4rem;
     margin: 0;
 }
+
+/* Right-Column Gallery  If its Flex - it wil be displayed in columns*/ 
+
+.right-col {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+           "left ."
+           "left .";
+}
+
+.card {
+    border-radius: .8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end; /* to keep the text at the end */
+    background-size: 200%;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url('../images/clothing1.jpg');
+    position: relative;
+}
+
+.card1::before {
+    position: absolute;
+    content: "";
+    background: url('../images/tag.svg') no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: -30px;
+    pointer-events: none;
+}
+.card2 {
+    background-image: url('../images/clothing2.jpg');
+}
+.card3 {
+    background-image: url('../images/clothing3.jpg');
+}
+
+.card-details {
+   background-color: white;
+   border-radius: .6em;
+   padding: 2em;
+   width: 150%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.card-details a {
+    color: black;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-details p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+p.product-price {
+    font-size: 1.8rem;
+}
